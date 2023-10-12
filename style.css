@@ -46,6 +46,17 @@
         font-size: 16px;
         cursor: pointer;
     }
+    .btn-comment-add {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+    }
 
     .btn-submit-add:hover {
         background-color: #45a049;
