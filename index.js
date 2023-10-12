@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     fetch("https://api.adviceslip.com/advice")
     .then(res => res.json())
     .then(data => {
-        let vehicleDiv = document.getElementById("vehicles")
+        let vehicleDiv = document.getElementById("adviceText")
         console.log(data)
         vehicleDiv.innerHTML = 
         `<h1>${data.slip.advice}</h1>

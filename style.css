@@ -1,21 +1,37 @@
      /* CSS for the body and header */
+     * {
+        margin:0;
+        padding:0;
+        font-family:'Poppins', sans-serif;
+        
+      }
      body {
         font-family: Arial, sans-serif;
-        background-color: #949090;
+        background-color: #94a89a;
         margin: 0;
         padding: 0;
     }
 
     header {
-        background-color: #333;
-        color: white;
-        text-align: center;
+        background-color: #c8dbcb;
         padding: 20px;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center; /* Center text horizontally */
     }
 
     /* CSS for the h1 element inside the header */
     header h1 {
         margin: 0;
+            font-size: 26px;
+            text-transform: uppercase;
+            
+            padding: 10px 0;
     }
 
     /* CSS for the "Next Motivation" button */
@@ -40,4 +56,28 @@
         background-color: white;
         padding: 20px;
         margin: 10px;
+    }
+    .logo{
+        width:50px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .card {
+        background-color: white;
+        padding: 20px;
+        margin: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+    #newadvice {
+        text-align: center; /* Center the form content horizontally */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    #newfriend {
+        text-align: center; /* Center the form content horizontally */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
