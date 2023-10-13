@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         e.preventDefault()
         let inputVal = e.target.leavecomment.value
         let comment = {
-            name: inputVal
+            feedback: inputVal
         }
         if(inputVal.length < 2){
             alert("Invalid comment")
@@ -53,21 +53,25 @@ document.addEventListener("DOMContentLoaded",()=>{
         .then(comment => console.log(comment))
 
     })
+    
+    fetch('http://localhost:3000/feedback')
+         .then(response => response.json())
+         .then(commentsData => {
+             commentsData.forEach(listing => {
+                const commentsList = document.getElementById("listofcomments")
+                console.log(commentsData)
+                commentsList.innerHTML = `
+                <h1>${listing.feedback}</h1>
+                `
+                
+                
+             });
+         })
+         
 })
 
-    // function loadComments() {
-    //     fetch('http://localhost:3000/comments')
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         data.forEach(commentData => {
-    //             const commentElement = createCommentElement(commentData);
-    //             commentList.appendChild(commentElement);
-    //         });
-    //     })
-    //     .catch(error => {
-    //         console.error('Error:', error);
-    //     });
-    // }
+
+
 
   
     
