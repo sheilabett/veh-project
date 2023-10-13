@@ -53,6 +53,28 @@ document.addEventListener("DOMContentLoaded",()=>{
         .then(comment => console.log(comment))
 
     })
+    const addFeedbackForm = document.querySelector("#newfriend");
+    addFeedbackForm.addEventListener("submit",(e) => {
+        e.preventDefault()
+        let inputVal = e.target.leavefeedback.value
+        let leftfeedback = {
+            feedbackname: inputVal
+        }
+        if(inputVal.length < 2){
+            alert("Kindly input a longer feedback")
+            return
+        }
+        fetch("http://localhost:3000/feedback",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(leftfeedback)
+        })
+        .then(res => res.json())
+        .then(leftfeedback => console.log(leftfeedback))
+
+    })
     
     fetch('http://localhost:3000/feedback')
          .then(response => response.json())
@@ -63,6 +85,7 @@ document.addEventListener("DOMContentLoaded",()=>{
                 commentsList.innerHTML = `
                 <h1>${listing.feedback}</h1>
                 `
+                commentsList.appendChild(commentsData)
                 
                 
              });
