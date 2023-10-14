@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded",()=>{
             body: JSON.stringify(leftfeedback)
         })
         .then(res => res.json())
-        .then(leftfeedback => console.log(leftfeedback))
-
+        .then(leftfeedback => alert("Feedback taken"))
+        
     })
     
     fetch('http://localhost:3000/feedback')
@@ -82,10 +82,12 @@ document.addEventListener("DOMContentLoaded",()=>{
              commentsData.forEach(listing => {
                 const commentsList = document.getElementById("listofcomments")
                 console.log(commentsData)
-                commentsList.innerHTML = `
-                <h1>${listing.feedback}</h1>
-                `
-                commentsList.appendChild(commentsData)
+                let h1=document.createElement("h1")
+                h1.textContent = listing.feedback
+                // commentsList.innerHTML = `
+                // <h1>${listing.feedback}</h1>
+                // `
+                commentsList.appendChild(h1)
                 
                 
              });
